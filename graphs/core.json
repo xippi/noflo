@@ -1,0 +1,70 @@
+{
+    "properties": {
+        "name": "core",
+        "id": "core",
+        "project": "noflo",
+        "environment": {
+            "type": "noflo-nodejs"
+        }
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "core/Repeat_z2dtx": {
+            "component": "core/Repeat",
+            "metadata": {
+                "label": "core/Repeat",
+                "x": 576,
+                "y": 360
+            }
+        },
+        "core/Output_wspwy": {
+            "component": "core/Output",
+            "metadata": {
+                "label": "core/Output",
+                "x": 720,
+                "y": 360
+            }
+        },
+        "core/Drop_e7ga3": {
+            "component": "core/Drop",
+            "metadata": {
+                "label": "core/Drop",
+                "x": 864,
+                "y": 360
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "core/Repeat_z2dtx",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Output_wspwy",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "core/Output_wspwy",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "core/Drop_e7ga3",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "start",
+            "tgt": {
+                "process": "core/Repeat_z2dtx",
+                "port": "in"
+            }
+        }
+    ]
+}
